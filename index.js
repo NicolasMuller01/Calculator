@@ -57,6 +57,7 @@ class Button{
 let click = 0;
 let arr = [];
 let counter = 0;
+let counterTwo = 0;
 
 button.forEach(btn => btn.addEventListener('click', (e) =>{
     click = click +1;
@@ -70,8 +71,10 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
         click = 0;
         arr= [];
     }
-    if (e.currentTarget.className==='+' || e.currentTarget.className==='-' || e.currentTarget.className==='/' || e.currentTarget.className==='*' ){
+
+   if (e.currentTarget.className==='+' || e.currentTarget.className==='-' || e.currentTarget.className==='/' || e.currentTarget.className==='*' ){
         counter = parseInt(counter)+1;
+        counterTwo=0;
         if(counter > 1){
             alert('error')
             objectBtn.deleting();
@@ -79,7 +82,7 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
             counter = 0;
             arr= [];
         }
-    console.log(counter)
+        console.log(counter)
     }
 
     if (e.currentTarget.className === 'c'){
@@ -88,6 +91,14 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
     }
   
     else if(e.currentTarget.className === '='){
+        counterTwo = parseInt(counterTwo) + 1;
+        counter=0;
+        if(counterTwo > 1){
+         objectBtn.deleting();
+         click = 0;
+         arr= [];
+         alert('error')
+        }
         for(const pos in arr){
             if(arr[pos] === '+'){
             let posicion = pos;
