@@ -49,9 +49,6 @@ class Button{
         }
         arr = []
     }
-    equal(){
-
-    }
 }
 
 let click = 0;
@@ -66,7 +63,7 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
     objectBtn.showInDisplay();
 
     if (arr[0]==='=' || arr[0] === '+' || arr[0] === '-' || arr[0] === '/' || arr[0] === '*'){
-        alert('error')
+        alert(`Error you can't make operations whitout numbers!`)
         objectBtn.deleting();
         click = 0;
         arr= [];
@@ -76,7 +73,7 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
         counter = parseInt(counter)+1;
         counterTwo=0;
         if(counter > 1){
-            alert('error')
+            alert(`Error you can't use two operators at the same time`);
             objectBtn.deleting();
             click = 0;
             counter = 0;
@@ -97,7 +94,7 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
          objectBtn.deleting();
          click = 0;
          arr= [];
-         alert('error')
+         alert(`Error you can't equal one numer`);
         }
         for(const pos in arr){
             if(arr[pos] === '+'){
