@@ -62,13 +62,6 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
     arr.push(e.currentTarget.className);
     objectBtn.showInDisplay();
 
-    if (arr[0]==='=' || arr[0] === '+' || arr[0] === '-' || arr[0] === '/' || arr[0] === '*'){
-        alert(`Error you can't make operations whitout numbers!`)
-        objectBtn.deleting();
-        click = 0;
-        arr= [];
-    }
-
    if (e.currentTarget.className==='+' || e.currentTarget.className==='-' || e.currentTarget.className==='/' || e.currentTarget.className==='*' ){
         counter = parseInt(counter)+1;
         counterTwo=0;
@@ -85,6 +78,7 @@ button.forEach(btn => btn.addEventListener('click', (e) =>{
     if (e.currentTarget.className === 'c'){
         objectBtn.deleting()
         click = 0;
+        counter=0;
     }
   
     else if(e.currentTarget.className === '='){
